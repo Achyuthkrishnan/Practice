@@ -30,7 +30,7 @@ int main() {
 	printf("The area of the circle with radius &a is: %f\n", r5);
 	
 	int r6 = fib(a);
-	printf("The &a fibonacci number is: %d\n", r6);
+	printf("The %d fibonacci number is: %d\n", a, r6);
 	
 	return 0;
 }	
