@@ -27,7 +27,7 @@ int main() {
 	printf("The quotient is: %f\n", r4);
 	
 	float r5 = area(a);
-	printf("The area of the circle with radius &a is: %f\n", r5);
+	printf("The area of the circle with radius %d is: %f\n",a, r5);
 	
 	int r6 = fib(a);
 	printf("The %d fibonacci number is: %d\n", a, r6);
