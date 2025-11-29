@@ -1,17 +1,20 @@
 # Makefile for Student Management System
 
-myprogram: main.o student.o menu.o grade.o utils.o
-	cc -o myprogram main.o student.o menu.o grade.o utils.o
+obj1 = grade.o utils.o
+obj2 = menu.o student.o
+
+myprogram: main.o $(obj2) $(obj1)
+	cc -o myprogram main.o $(obj2) $(obj1)
 	
 main.o: student.h menu.h
 
-menu.o: grade.h utils.h
+menu.o: $(obj1)
 student.o: student.h
 
-grade.o: grade.h
-utils.o: utils.h
+$(obj1): %.o: %.c
+	cc -c $< -o $@
 
 .PHONY: clean
 
 clean:
-	rm myprogram main.o student.o menu.o grade.o utils.o	
+	rm myprogram main.o $(obj2) $(obj1)	
